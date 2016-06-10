@@ -1,0 +1,29 @@
+\name{AddCoord}
+\alias{AddCoord}
+\title{Add coordinates to sp object}
+\usage{
+  AddCoord(sp_object)
+}
+\arguments{
+  \item{sp_object}{a sp(SpatialPolygons) object to be added
+  coordinates.}
+}
+\value{
+  data of sp object with coordinates added.
+}
+\description{
+  A wrap function which add coordinates to sp object.
+}
+\details{
+  add coordinates to sp object
+}
+\examples{
+\donttest{
+data(AU)
+AU@data$long <- AU@data$lat <- NULL
+head(AU@data)
+AU@data <- AddCoord(AU)
+head(AU@data)
+}
+}
+

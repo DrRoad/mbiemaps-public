@@ -1,0 +1,7 @@
+export(AddCoord)
+export(fortify_sp_object)
+export(simplify_sp_object)
+importFrom(ggplot2,fortify)
+importFrom(rgeos,gSimplify)
+importFrom(sp,SpatialPolygonsDataFrame)
+importFrom(sp,coordinates)

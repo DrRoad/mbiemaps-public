@@ -1,0 +1,24 @@
+Package: mbiemaps
+Type: Package
+Title: Maps data used by Ministry of Business, Innovation and Employment, New
+    Zealand
+Version: 1.2.3
+Date: 2016-03-23
+Author: Peter Ellis
+Maintainer: Eric Wu <Eric.Wu@mbie.govt.nz>, Sam Vennell <Sam.Vennell@mbie.govt.nz>
+Description: This package provides map shape files, majorly regions,
+    territorial authorities and area units of new zealand.
+Depends:
+    R (>= 2.15.2),
+    mbie,maptools
+Imports:
+    ggplot2,rgeos,sp
+Suggests:
+    extrafont,lattice,latticeExtra,
+    mbiedata, leaflet
+License: GPL-3
+LazyLoad: no
+Collate:
+    'AddCoord.R'
+    'fortify_sp_object.R'
+    'simplify_sp_object.R'

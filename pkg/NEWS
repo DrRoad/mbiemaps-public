@@ -1,0 +1,50 @@
+TODO
+- add examples to mbiemaps-package.Rd
+- TPK maps need to be updated to reflect 2014 boundarise change.
+- future plan to reduce the package size (only keep meshblock level map but derive others from this one). 
+- `axis.ticks.margin` is deprecated. Please set `margin` property  of `axis.text` instead - in theme_nothing()
+
+---------mbiemaps 1.2.3-----------
+* Maintained by Sam Vennell, 23/3/2016. 
+* Added the HLFS and Jobs Online maps (Region_HLFS and Region_Jobs_Online)
+* Added a leaflet example for Region_TPK.Rd
+
+---------mbiemaps 1.2.2-----------
+* Maintained by Sam Vennell, 17/2/2016. Peer reviewd by Eric Wu, 25/2/2016.
+* Updated examples for WARD.Rd, AU.Rd, TA.Rd, Region.Rd, CB.Rd utilising the leaflet package.
+* Add interactive choropleth maps with leaflet.
+* Added Council Ward maps
+* replace deprecated `show_guide` to `show.legend` in ggplot2 codes.
+
+---------mbiemaps 1.2.1-----------
+* Maintained by Eric Wu, 30/1/2015.  Peer reviewed by Antonia Milkop, 20/2/2015
+* added TPK (Te Puni Kōkiri, Ministry of Māori Development) region maps
+* excluded polygons with negative longitude (east longitude, for Chatham islands), since this may cause plotting problems
+* replaced data() in grooming code to load() to avoid version inconsistency.
+* added import_SNZ_geographic_area_files.R to import SNZ geographic areas(lookup tables) files
+* added helpfile for area unit lookup data
+* fix a bug in AddCoord()
+
+---------mbiemaps 1.2-----------
+* Maintained by Eric Wu, January 2015.  Peer reviewed by Antonia Milkop, 16/1/2015
+* standardize the project root folder
+* tidy up the initial_import.R
+* add meshblock maps
+* add functions simplify_sp_object() and fortify_sp_object()
+* add CINZ/CAS region maps
+* change license from "GPL-2 | GPL-3 [expanded from: GPL (>= 2)]" to "GPL-3"
+
+---------mbiemaps 1.1-----------
+* added simplified versions of area unit and TA maps from original work by Dragonfly
+* added simplified version of Region map
+* added fortified versions of RTO and simplified versions of area unit, TA and Region maps
+* re-generated the RTO and TA_TRED maps and simplified them
+
+
+----------mbiemaps 1.0----------------
+* Has R objects for territorial authority, community board, region and area unit, created from the 2014 SNZ shapefiles
+* Has R objects for RTO and TA_TRED that have been taken from 2013 version of mbie package.  
+
+
+
+

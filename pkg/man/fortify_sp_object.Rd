@@ -1,0 +1,40 @@
+\name{fortify_sp_object}
+\alias{fortify_sp_object}
+\title{fortify sp object}
+\usage{
+  fortify_sp_object(sp_object, reg_col_name = "NAME")
+}
+\arguments{
+  \item{sp_object}{a sp(SpatialPolygons) object to be
+  simplified.}
+
+  \item{reg_col_name}{the column name of the data of
+  sp_object@h which uniquely identify the region.}
+}
+\value{
+  a dataframe which is ready for ggplot.
+}
+\description{
+  A wrap function which fortify the sp(SpatialPolygons)
+  object for ggplot.
+}
+\details{
+  fortify sp object
+}
+\examples{
+\donttest{
+data(AU)
+data(au_simpl)
+AU_gg <- fortify_sp_object(AU)
+au_simpl_gg <- fortify_sp_object(au_simpl)
+object.size(AU)
+object.size(au_simpl)
+object.size(AU_gg)
+object.size(au_simpl_gg)
+ggplot(au_simpl_gg, aes(x=long, y=lat, group=group, fill=gsub(" Region", "", NAME))) +
+  geom_polygon(color="black") +
+  theme_nothing() +
+  labs(fill="")
+}
+}
+
