@@ -70,7 +70,7 @@ ggplot(region_HLFS_simpl_gg, aes(x=long, y=lat, group=group)) +
   geom_polygon(color="black", fill="white") +
   coord_map()
 
- =======
+#=======
 
 #A coloured and labelled version
 ggplot() +

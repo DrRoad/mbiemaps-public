@@ -40,6 +40,7 @@ Mapping seems to work better in an R console (eg in conjunction with Notepad++) 
 library(mbiemaps)
 library(leaflet)
 library(dplyr)
+library(ggplot2)
 
 data(cb_simpl) 
 pal <- colorQuantile("YlGn", NULL, n = 5)

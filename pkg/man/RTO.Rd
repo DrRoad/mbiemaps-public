@@ -38,7 +38,7 @@ require(sp)
 data(RTO)
 data(TA)
 par(fg=NA)
-plot(RTO, col=tourism.cols("Alternating"))
+plot(RTO, col=terrain.colors(length(RTO@polygons)))
 par(fg="black")
 plot(TA, add=TRUE)
 axis(1)
@@ -87,8 +87,8 @@ dom <- RTEs \%>\%
    group_by(RTO,YEMar) \%>\% 
    summarise(Spend = sum(Spend)) \%>\% 
    tidyr::spread(YEMar, Spend) \%>\% 
-   mutate(Growth=CAGR(.$"2013"/.$"2009",4)) \%>\% 
    ungroup \%>\%
+   mutate(Growth=CAGR(.$"2013"/.$"2009",4)) \%>\% 
    select(RTO, Growth, Spend2013=one_of("2013"))
 	
 
@@ -141,7 +141,7 @@ rto_gg_s <- unique(rto_gg[, c("long.centre", "lat.centre", "RTO")])
 ggplot() +
   geom_polygon(data=rto_gg, aes(x=long, y=lat, group=group, fill=RTO)) +
   geom_text(aes(x=long.centre, y=lat.centre, label=RTO), data=rto_gg_s) +
-  theme_nothing() +
+  ggmap::theme_nothing() +
   coord_map() +
   theme(legend.position="none")
 }
