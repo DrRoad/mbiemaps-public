@@ -55,7 +55,7 @@ data(region_CINZ_simpl_gg)
 head(region_CINZ_simpl_gg)
 ggplot(region_CINZ_simpl_gg, aes(x=long, y=lat, group=group)) + 
   geom_polygon(color="black", fill="white") +
-  theme_nothing() +
+  ggmap::theme_nothing() +
   coord_map()
 }
 }

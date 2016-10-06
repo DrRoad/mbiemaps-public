@@ -22,7 +22,7 @@
 #' object.size(au_simpl_gg)
 #' ggplot(au_simpl_gg, aes(x=long, y=lat, group=group, fill=gsub(" Region", "", NAME))) + 
 #'   geom_polygon(color="black") +
-#'   theme_nothing() +
+#'   ggmap::theme_nothing() +
 #'   labs(fill="")
 #' }
 

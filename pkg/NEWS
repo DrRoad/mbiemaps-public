@@ -2,7 +2,14 @@ TODO
 - add examples to mbiemaps-package.Rd
 - TPK maps need to be updated to reflect 2014 boundarise change.
 - future plan to reduce the package size (only keep meshblock level map but derive others from this one). 
-- `axis.ticks.margin` is deprecated. Please set `margin` property  of `axis.text` instead - in theme_nothing()
+
+---------mbiemaps 1.2.5-----------
+*Addition of examples for hexagon tile maps
+
+---------mbiemaps 1.2.4-----------
+* Remove mbie and mbiedata dependencies from mbiemaps
+* Remove mbieDBmisc dependencies from mbiemaps
+* Add hexagon tile maps (for Regional Council, Regional Tourism Organizations, Territorial Authorities )
 
 ---------mbiemaps 1.2.3-----------
 * Maintained by Sam Vennell, 23/3/2016. 

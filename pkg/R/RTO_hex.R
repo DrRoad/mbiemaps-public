@@ -1,0 +1,44 @@
+#' @title Hexagon tile maps for New Zealand RTOs (regional tourism organizations)
+#' @description A set of spatial polygons data frame files for New Zealand's regional tourism organizations.
+
+#' @rdname RTO_hex
+#' @name RTO_hex
+#' @alias RTO_hex
+#' @alias RTO_hex_simpl
+#' @alias RTO_hex_simpl_gg
+
+#' @usage data(RTO_hex) \cr data(RTO_hex_simpl) \cr data(RTO_hex_simpl_gg)
+#' @format \code{RTO_hex} and \code{RTO_hex_simpl} are spatial polygons dataframes. \code{RTO_hex_simpl_gg} is a fortified version suitable for use with ggplot2.
+
+#' @docType data
+#' @author Mark Hatcher; Eric Wu; Sam Vennell \email{Eric.Wu@mbie.govt.nz}
+#' @references 
+#' @keywords data
+
+#' @examples \donttest{
+#' require(mbiemaps)
+#' require(dplyr)
+#' require(ggplot2)
+#' require(ggrepel)
+#' 
+#'  #================Example 1: RTO_hex=====================
+#'   data(RTO_hex) 
+#'   plot(RTO_hex, col=rainbow(50, alpha=0.5))
+
+#' #================Example 2: RTO_hex_simpl=====================
+#'   data(RTO_hex_simpl) 
+#'   plot(RTO_hex_simpl, col=rainbow(50, alpha=0.5))
+#'
+#' #================Example 3: RTO_hex_simpl_gg=====================                          
+#'   data(RTO_hex_simpl_gg)
+#'   ggplot(RTO_hex_simpl_gg, aes(x=long, y=lat, group=group, fill=gsub(" RTO", "", NAME))) + 
+#'      geom_polygon(color="black") +
+#'      coord_fixed(ratio = 1) +
+#'      ggmap::theme_nothing(legend = TRUE) +
+#'      labs(fill="") +
+#'      theme(legend.position="bottom") +
+#'      guides(legend.position="bottom") +
+#'      geom_text_repel(data = RTO_hex_simpl_gg %>% select(long.centre, lat.centre,group, NAME) %>% distinct,
+#'                  aes(x=long.centre, y=lat.centre, group=group, label = gsub(" RTO", "", NAME)))
+#' }
+NULL

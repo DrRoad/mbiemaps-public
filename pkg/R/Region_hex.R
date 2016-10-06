@@ -1,0 +1,45 @@
+#' @title Hexagon tile maps for New Zealand regional councils
+#' @description A set of spatial polygons data frame files for New Zealand's Regional Councils.
+
+#' @rdname Region_hex
+#' @name Region_hex
+#' @alias Region_hex
+#' @alias Region_hex_simpl
+#' @alias Region_hex_simpl_gg
+
+#' @usage data(Region_hex) \cr data(Region_hex_simpl) \cr data(Region_hex_simpl_gg)
+#' @format \code{Region_hex} and \code{Region_hex_simpl} are spatial polygons dataframes. \code{Region_hex_simpl_gg} is a fortified version suitable for use with ggplot2.
+
+#' @docType data
+#' @author Mark Hatcher; Eric Wu; Sam Vennell \email{Eric.Wu@mbie.govt.nz}
+#' @references 
+#' @keywords data
+
+#' @examples \donttest{
+#'   require(mbiemaps)
+#'   require(dplyr)
+#'   require(ggplot2)
+#'
+#' #================Example 1: Region_hex=====================
+#'   data(Region_hex) 
+#'   plot(Region_hex, col=rainbow(50, alpha=0.5))
+#'
+#' #================Example 2: Region_hex_simpl=====================
+#'   data(Region_hex_simpl) 
+#'   plot(Region_hex_simpl, col=rainbow(50, alpha=0.5))
+#'
+#' #================Example 3: Region_hex_simpl_gg=====================                          
+#'   data(Region_hex_simpl_gg)
+#'   ggplot(Region_hex_simpl_gg, aes(x=long, y=lat, group=group, fill=gsub(" Region", "", NAME))) + 
+#'      geom_polygon(color="black") +
+#'      coord_fixed(ratio = 1) +
+#'      ggmap::theme_nothing(legend = TRUE) +
+#'      labs(fill="") +
+#'      theme(legend.position="bottom") +
+#'      guides(fill=FALSE) +
+#'      geom_text(data = Region_hex_simpl_gg %>% select(long.centre, lat.centre,group, NAME) %>% distinct,
+#'                aes(x=long.centre, y=lat.centre, group=group, 
+#'                    label = gsub(" Region", "", NAME)%>%gsub("-","-\n",.)),
+#'                size=4)
+#' }
+NULL

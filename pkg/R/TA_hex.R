@@ -1,0 +1,44 @@
+#' @title Hexagon tile maps for New Zealand RTOs (regional tourism organizations)
+#' @description A set of spatial polygons data frame files for New Zealand's regional tourism organizations.
+
+#' @rdname TA_hex
+#' @name TA_hex
+#' @alias TA_hex
+#' @alias TA_hex_simpl
+#' @alias TA_hex_simpl_gg
+
+#' @usage data(TA_hex) \cr data(TA_hex_simpl) \cr data(TA_hex_simpl_gg)
+#' @format \code{TA_hex} and \code{TA_hex_simpl} are spatial polygons dataframes. \code{TA_hex_simpl_gg} is a fortified version suitable for use with ggplot2.
+
+#' @docType data
+#' @author Mark Hatcher; Eric Wu; Sam Vennell \email{Eric.Wu@mbie.govt.nz}
+#' @references 
+#' @keywords data
+
+#' @examples \donttest{
+#'   require(mbiemaps)
+#'   require(dplyr)
+#'   require(ggplot2)
+#'   require(ggrepel)
+#'
+#' #================Example 1: TA_hex=====================
+#'   data(TA_hex) 
+#'   plot(TA_hex, col=rainbow(50, alpha=0.5))
+#'
+#' #================Example 2: TA_hex_simpl=====================
+#'   data(TA_hex_simpl) 
+#'   plot(TA_hex_simpl, col=rainbow(50, alpha=0.5))
+#'
+#' #================Example 3: TA_hex_simpl_gg=====================                          
+#'   data(TA_hex_simpl_gg)
+#'   set.seed(24)
+#'   ggplot(TA_hex_simpl_gg, aes(x=long, y=lat, group=group, fill=NAME)) + 
+#'      geom_polygon(color="black") +
+#'      coord_fixed(ratio = 1) +
+#'      ggmap::theme_nothing(legend = TRUE) +
+#'      labs(fill="") +
+#'      guides(fill=FALSE) +
+#'      geom_text_repel(data = TA_hex_simpl_gg %>% select(long.centre, lat.centre,group, NAME) %>% distinct,
+#'                      aes(x=long.centre, y=lat.centre, group=group, label = NAME))
+#' }
+NULL
