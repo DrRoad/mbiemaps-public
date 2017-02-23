@@ -7,5 +7,5 @@ This public version of the `mbiemaps` R package is under development and we hope
 ## Installation
 
 ```R
-devtools::install_github("nz-mbie/mbiemaps-public")
+devtools::install_github(repo="nz-mbie/mbiemaps-public", subdir = "pkg")
 ```
