@@ -18,7 +18,7 @@ data(au_simpl_gg)}
 \details{
 This object was created by importing a shapefile, downloaded from the Statistics New Zealand website, with \code{readOGR()} and using \code{spTransform} to project it in latitude and longitude (rather than NZTM coordinates).  The boundaries of AU have not been adjusted in any way.  
 
-\code{au_simpl} is a spatial polygons data frame; \code{au_simpl_gg} is a data frame created from au_simpl by means of the fortify function.  Unfortunately nine area units seem to have been lost on the way.  These are Ravenswood, Woodend West, Rangiora Central, Kaiapoi North West, Kaiapoi North East, Silverstream, Highfield Park, Prestons and Rolleston South East.
+\code{au_simpl} is a spatial polygons data frame which is simplified from \code{AU}; \code{au_simpl_gg} is a data frame created from au_simpl by means of the fortify function.  Unfortunately nine area units seem to have been lost on the way.  These are Ravenswood, Woodend West, Rangiora Central, Kaiapoi North West, Kaiapoi North East, Silverstream, Highfield Park, Prestons and Rolleston South East.
 
 The name, length, area and centre of each polygon is stored in the data slot of AU.  au_simpl does not have the area information at this point.
 }
